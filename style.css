@@ -1,0 +1,167 @@
+* {
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html {
+    scroll-behavior:smooth;
+}
+
+body {
+    font-family: Helvetica, sans-serif;
+    background:#f1f1f1;
+    font-size:.9em;
+}
+
+/*UTILITY*/
+
+p {
+    padding:5px 0;
+}
+
+a {
+    text-decoration:none;
+}
+
+.red {
+    color:rgb(189, 76, 76);
+}
+
+.grey-bk {
+    background:rgb(226, 226, 226);
+    border:1px solid rgb(209, 209, 209);
+    border-radius:2px;
+    padding:5px;
+    overflow:auto;
+    margin:5px 0;
+    font-size:.8rem;
+}
+
+.main-section ul {
+    padding-left:50px;
+}
+
+/*BANNER*/
+
+#banner {
+    background:#AACCDD;
+    text-align:center;
+    padding:10px;
+    margin-bottom:20px;
+    position:fixed;
+    top:0;
+    width:100%;
+    box-shadow:2px 2px 4px rgb(153, 153, 153);
+}
+
+/*CONTENT AREA*/
+
+.container {
+    width:1100px;
+    margin:auto;
+}
+
+/*NAV*/
+
+#navbar {
+    background:#d4d4d4;
+    border-radius:5px;
+    padding:10px 0;
+    width:250px;
+    position:fixed;
+    top:80px;
+    overflow:auto;
+}
+
+#navbar header {
+    padding-left:10px;
+    font-size:1rem;
+}
+
+.nav-link {
+    display:block;
+    padding:5px 20px;
+    color:#555;
+}
+
+.nav-link:hover {
+    background:#555;
+    color:#fff;
+}
+
+/*MAIN*/
+
+#main-doc {
+    padding:0 10px;
+    background:#f3f3f3;
+    margin-left:270px;
+    margin-top:70px;
+}
+
+.main-section {
+    padding:10px;
+    border-top:70px solid transparent;
+    margin-top:-70px;
+    background-clip:padding-box;
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding;
+}
+
+.main-section > header {
+    font-size:2rem;
+}
+
+#run {
+    display:flex;
+    justify-content: space-between;
+}
+
+#run i {
+    padding-right:5px;
+}
+
+@media only screen and (max-width: 1100px) {
+    .container {
+        width:95%;
+    }
+
+    #navbar {
+        width:100%;
+        top:65px;
+        left:0;
+        display:grid;
+        grid-template-columns:repeat(3, 1fr);
+        grid-gap:5px;
+        align-items:center;
+        text-align:center;
+        border-radius:0;
+    }
+
+    #navbar header {
+        grid-column:1/4;
+    }
+
+    .nav-link {
+        padding:0;
+    }
+
+    #main-doc {
+        margin-left:0;
+        margin-top:160px;
+        padding:0;
+    }
+
+    .main-section {
+        border-top:160px solid transparent;
+        margin-top:-160px;
+        background-clip:padding-box;
+        -webkit-background-clip: padding-box;
+        -moz-background-clip: padding;
+    }
+
+    #run {
+        flex-direction:column;
+        align-items:center;
+    }
+}

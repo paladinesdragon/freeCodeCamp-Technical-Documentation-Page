@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>freeCodeCamp.org - Technical Documentation</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/1ab2a302e5.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header id="banner">
+        <h3>Ren'Py</h3>
+        <p>A visual novel engine</p>
+    </header>
+    <section class="container">
+        <nav id="navbar">
+            <header>Ren'Py Quickstart</header>
+            <a href="#What_is_Ren'Py?" class="nav-link">What is Ren'Py?</a>
+            <a href="#Where_does_it_run?" class="nav-link">Where does it run?</a>
+            <a href="#Where_do_I_start?" class="nav-link">Where do I start?</a>
+            <a href="#The_Ren'Py_Launcher" class="nav-link">The Ren'Py Launcher</a>
+            <a href="#A_Simple_Game" class="nav-link">A Simple Game</a>
+            <a href="#Characters" class="nav-link">Characters</a>
+            <a href="#Images" class="nav-link">Images</a>
+            <a href="#Reference" class="nav-link">Reference</a>
+        </nav>
+        <main id="main-doc">
+            <section id="What_is_Ren'Py?" class="main-section">
+                <header>What is Ren'Py?</header>
+                <p>Ren'Py is a visual novel engine&#8212used by thousands of creators from around the world&#8212that helps you use words, images, and sounds to tell interactive stories that run on computers and mobile devices. These can be both visual novels and life simulation games. The easy to learn script language allows anyone to efficiently write large visual novels, while its Python scripting is enough for complex simulation games.</p>
+                <p>Ren'Py is open source and free for commercial use.</p>
+            </section>
+            <section id="Where_does_it_run?" class="main-section">
+                <header>Where does it run?</header>
+                <p id="run">
+                    <i class="fab fa-android fa-2x"></i>
+                    <span>Android 5.0+</span>
+                    <i class="fab fa-html5 fa-2x"></i>
+                    <span>HTML5/Web Assembly (Beta)</span>
+                    <i class="fab fa-linux fa-2x"></i>
+                    <span>Linux x86/x86_64</span>
+                    <i class="fab fa-windows fa-2x"></i>
+                    <span>Windows XP+</span>
+                    <i class="fab fa-apple fa-2x"></i>
+                    <span>Mac OS X 10.6+</span>
+                    <i class="fab fa-app-store-ios fa-2x"></i>
+                    <span>iOS 7+</span>
+                </p>
+            </section>
+            <section id="Where_do_I_start?" class="main-section">
+                <header>Where do I start?</header>
+                <p>This documentation will demonstrate how you can make a Ren'Py game from scratch in a few easy steps. We'll do this by showing how to make a simple game, <i>The Question</i>.</p>
+            </section>
+            <section id="The_Ren'Py_Launcher" class="main-section">
+                <header>The Ren'Py Launcher</header>
+                <p>Before you begin making a game, you should first take some time to learn how the Ren'Py launcher works. The launcher lets you create, manage, edit, and run Ren'Py projects.</p>
+                <p><b>Getting Started.</b> To get started you'll want to <a href="https://www.renpy.org/latest.html">download Ren'Py</a></p>
+                <p>Once you've downloaded Ren'Py, you'll want to extract and run it.</p>
+                <p>
+                    <ul>
+                        <li>On Windows, double click on the executable file you download. It will extract Ren'Py into a folder named <code class="red">renpy-&lt;version&gt;</code>. You can change into that folder and run <code class="red">renpy.exe</code>. (The renpy.exe file may be presented as renpy if extensions are hidden.)</li>
+                        <li>On Mac OS X, double-click on the downloaded drive image to mount it as a drive. When the drive opens, copy the folder named <code class="red">renpy-&lt;version&gt;</code> somewhere else. (Where does not matter, but it has to be moved out of the read-only drive image. Do not move the renpy app out of the folder it's in – it won't work elsewhere.) Then change into it, and run the <code class="red">renpy</code> application.</li>
+                        <li>On Linux, unpack the tarball, change into the <code class="red">renpy-&lt;version&gt;</code> directory, and then run <code class="red">renpy.sh</code>.</li>
+                    </ul>
+                </p>
+                <p>After running this, the Ren'Py launcher should run.</p>
+                <p>The Ren'Py launcher has been translated to multiple languages. To change the language, choose "preferences" at the bottom right, and then select the language.</p>
+                <p><b>Choosing and Launching a Project.</b> You should first see what the completed <i>The Question</i> game looks like. To do this, start the Ren'Py launcher, and choose "The Question" from the first screen. Choose "Launch Project" to start <i>The Question</i>.</p>
+                <p>You can get back to the Ren'Py demo by doing the same thing, but choosing "Tutorial" instead of "The Question".</p>
+                <p><b>Creating a new Project.</b> Create a new project by choosing "Create New Project" from the launcher.</p>
+                <p>If this is your first time creating a project, Ren'Py may ask you to select the projects directory. This is a directory (also called a folder) where new projects are created, and is scanned for existing projects. The directory chooser might pop up below Ren'Py, so be sure to look for it there.</p>
+                <p>The launcher will then ask you for a project name. Since "The Question" is already taken, you should enter something different, like "My Question", and type enter.</p>
+                <p>After that, the launcher will ask you to select the project resolution. The default of 1280x720 is a good compromise between game size and image quality. For the purpose of this tutorial, we will select 1280x720 to match "The Question" game art, then click "Continue".</p>
+                <p>The launcher will then ask you to choose a color scheme – an accent and background color for the new GUI. It doesn't matter what you pick at this point, so just pick something you find appealing, and then click "Continue".</p>
+                <p>At this point, Ren'Py will process for a bit, and spit out a simple game template. The template used placeholder art and text, but is runnable, and supports expected features like rollback, loading, and saving. Choose "Launch Project" to run it.</p>
+            </section>
+            <section id="A_Simple_Game" class="main-section">
+                <header>A Simple Game</header>
+<code>
+<pre class="grey-bk">
+label start:
+    
+    "Sylvie" "Hi there! How was class?"
+    
+    "Me" "Good..."
+
+    "I can't bring myself to admit that it all went in one ear and out the other."
+
+    "Me" "Are you going home now? Wanna walk back with me?"
+
+    "Sylvie" "Sure!"
+</pre>
+</code>
+                <p>This is a very simple Ren'Py game. It doesn't include any pictures or music, but it does show a conversation between two characters, and a line of narration.</p>
+                <p>To try this out, from the top screen of the launcher select "My Question" project, and then choose "script.rpy" from under Edit File. If this is your first time, Ren'Py will ask you to select an editor (we recommend Editra for first time creators), and will download the editor you choose. Then it will open the script file in the editor.</p>
+                <p>Once the editor opens, erase everything in script.rpy. We're starting from scratch, so you don't need what's there. Copy the example above into script.ry, and save it.</p>
+                <p>You're now ready to run this example. Go back to the launcher, and choose "Launch Project". Ren'Py will start up. Notice how, without any extra work, Ren'Py has given you menus that let you load and save the game, and change various preferences. When ready, click "Launch Project", and play through this example game.</p>
+                <p>This example shows some of the commonly-used Ren'Py statements.</p>
+                <p>The first line is a label statement. The label statement is used to give a name to a place in the program. In this case, we create a label named <code class="red">start</code>. The start label is special, as it's where Ren'Py scripts begin running when the user clicks "Start Game" on the main menu.</p>
+                <p>The other lines are say statements. There are two forms of the say statement. The first is a string (beginning with a double-quote, containing characters, and ending with a double-quote) on a line by itself, which is used for narration, and the thoughts of the main character. The second form consists of two strings. It's used for dialogue, with the first string being a character name and the second being what that character is saying.</p>
+                <p>Note that all the say statements are indented by four spaces. This is because they are a block underneath the label statement. In Ren'Py, blocks must be indented relative to the prior statement, and all of the statements in a block must be indented by the same amount.</p>
+                <p>When strings contain double-quote characters, those characters need to be preceded by a backslash. For example</p>
+<code>
+<pre class="grey-bk">
+    "Sylvie" "Did you ever hear Lincon's famous saying, \"The problem with Internet quotations is that many of them are not genuine.\""
+</pre>
+</code>
+                <p>While this simple game isn't much to look at, it's an example of how easy it is to get something working in Ren'Py. We'll add the pictures in a little bit, but first, let's see how to define characters.</p>
+            </section>
+            <section id="Characters" class="main-section">
+                <header>Characters</header>
+                <p>One problem with the first example is that it requires you to repeatedly type the name of a character each time they speak. In a dialogue-heavy game, this might be a lot of typing. Also, both character names are displayed in the same way, in the accent color selected when starting the game. To fix this, Ren'Py lets you define characters in advance. This lets you associate a short name with a character, and to change the color of the character's name.</p>
+<code>
+<pre class="grey-bk">
+define s = Character('Sylvie', color="#c8ffc8")
+define m = Character('Me', color="#c8c8ff")
+
+label start:
+
+    s "Hi there! How was class?"
+
+    m "Good..."
+
+    "I can't bring myself to admit that it all went in one ear and out the other."
+
+    s "Are you going home now? Wanna walk back with me?"
+
+    m "Sure!"
+</pre>
+</code>
+                <p>The first and and second lines define characters. The first line defines a character with the short name of "s", the long name "Sylvie", with a name that is shown in a greenish color. (The colors are red-green-blue hex triples, as used in web pages.)</p>
+                <p>The second line creates a character with a short name "m", a long name "Me", with the name shown in a reddish color. Other characters can be defined by copying one of the character lines, and changing the short name, long name, and color.</p>
+                <p>We've also changed the say statements to use character objects instead of a character name string. This tells Ren'Py to use the characters we defined.</p>
+            </section>
+            <section id="Images" class="main-section">
+                <header>Images</header>
+                <p>A visual novel isn't much of a visual novel without pictures. Here's another scene from "The Question". This also includes statements that show images to the player. This can fully replace the previous section of script, if you want to try it out.</p>
+<code>
+<pre class="grey-bk">
+define s = Character('Sylvie', color="#c8ffc8")
+define m = Character('Me', color="#c8c8ff")
+
+label start:
+
+    scene bg meadow
+
+    "After a short while, we reach the meadows just outside the neighborhood where we both live."
+
+    "It's a scenic view I've grown used to. Autumn is especially beautiful here."
+
+    "When we were children, we played in these meadows a lot, so they're full of memories."
+
+    m "Hey... Umm..."
+
+    show sylvie green smile
+
+    "She turns to me and smiles. She looks so welcoming that I feel my nervousness melt away."
+
+    "I'll ask her...!"
+
+    m "Ummm... Will you..."
+
+    m "Will you be my artist for a visual novel?"
+
+    show sylvie green surprised
+
+    "Silence."
+</pre>
+</code>
+                <p>This segment of script introduces two new statements. The <code class="red">scene</code> statement on line 6 clears all images and displays a background image. The <code class="red">show</code> statements on lines 16 and 26 display a sprite on top of the background, and change the displaying sprite, respectively.</p>
+                <p>In Ren'Py, each image has a name. The name consists of a tag, and optionally one or more attributes. Both the tag and attributes should begin with a letter, and contain letters, numbers, and underscores. For example:</p>
+                <p>
+                    <ul>
+                        <li>In the scene statement on line 6, the tag is "bg", and the attribute is "meadow." By convention, background images should use the tag bg.</li>
+                        <li>In the first show statement on line 16, the tag is "sylvie", and the attributes are "green" and "smile".</li>
+                        <li>In the second show statement on line 26, the tage is "sylvie", and the attributes are "green" and "surprised".</li>
+                    </ul>
+                </p>
+                <p>Only one image with a given tag can be shown at the same time. When a second image with the same tag is show, it replaces the first image, as happens on line 26.</p>
+                <p>Ren'Py searches for image files in the images directory, which can be found by selecting "images" in the "Open Directory" section of the launcher. Ren'Py expects character art to be an PNG or WEBP file, while background art should be a JPG, JPEG, PNG, or WEBP file. The name of a file is very important – the extension is removed, the file name is forced to lowercase, and that's used as the image name.</p>
+                <p>For example, the following files, placed in the images directory, define the following images.</p>
+                <p>
+                    <ul>
+                        <li>"bg meadow.jpg" -&gt; <code class="red">bg meadow</code></li>
+                        <li>"sylvie green smile.png" -&gt; <code class="red">sylvie green smile</code></li>
+                        <li>"sylvie green surprised.png" -&gt; <code class="red">sylvie green surprised</code></li>
+                    </ul>
+                </p>
+                <p>Since the filenames are lowercase, the following also holds.</p>
+                <p>
+                    <ul>
+                        <li>"Sylvie Green Surprised.png" -&gt; <code class="red">sylvie green surprised</code></li>
+                    </ul>
+                </p>
+                <p>Images can be placed in subdirectories (subfolders) under the images directory. The directory name is ignored and only the filename is used to define the image name.</p>
+                <p><b>Hide Statement.</b> Ren'Py also supports a <code class="red">hide</code> statement, which hides the given image.</p>
+            </section>
+            <section id="Reference" class="main-section">
+                <header>Reference</header>
+                <p>All content taken from <a href="https://www.renpy.org/doc/html/quickstart.html" target="_blank">Ren'Py</a> and used for educational purposes.</p>
+                <p>For more information visit <a href="https://www.renpy.org/" target="_blank">www.renpy.org</a>.</p>
+            </section>
+        </main>
+    </section>
+</body>
+</html>
